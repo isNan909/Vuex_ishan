@@ -15,9 +15,6 @@
 <script>
 export default {
   computed: {
-    products(){
-      return this.$store.state.products;
-    },
     reduceStock(){
       var reduceStock = this.$store.state.products.map(product => {
         return {
