@@ -1,10 +1,9 @@
 <template>
   <div>
-    <h1>Product List One</h1>
+    <h1>Product List Two</h1>
     <br><br>
-    <h5>List of products:</h5>
     <ul>
-      <li v-for="product in reduceStock">
+      <li v-for="product in products">
         <span>{{product.name}}</span>
         <span>${{product.price}}</span>
       </li>
@@ -14,18 +13,10 @@
 
 <script>
 export default {
+  name: 'ProductListTwo',
   computed: {
     products(){
-      return this.$store.state.products;
-    },
-    reduceStock(){
-      var reduceStock = this.$store.state.products.map(product => {
-        return {
-          name:'**'+product.name +'**',
-          price: product.price / 2
-        }
-      });
-      return reduceStock;
+      return this.$store.state.products
     }
   }
 }
