@@ -2,7 +2,7 @@
   <div id="homepage">
     <h3>{{title}}</h3>
     <product-list-one></product-list-one>
-    <product-list-two></product-list-two> 
+    <product-list-two></product-list-two>
   </div>
 </template>
 
@@ -13,8 +13,8 @@ import ProductListTwo from './ProductListTwo.vue'
 
 export default {
   components: {
-     'product-list-one' : ProductListOne,
-    'product-list-two': ProductListTwo
+   'product-list-one' : ProductListOne,
+   'product-list-two': ProductListTwo
   },
   data () {
     return {
