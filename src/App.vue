@@ -5,7 +5,13 @@
 </template>
 
 <script>
+import ProductListOne from './components/ProductListOne.vue'
+import ProductListTwo from './components/ProductListTwo.vue'
 export default {
+  components: {
+    productlistone: 'ProductListone',
+    productlisttwo: 'ProductListtwo'
+  },
   name: 'App'
 }
 </script>

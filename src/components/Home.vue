@@ -1,15 +1,24 @@
 <template>
   <div id="homepage">
-    <h1>{{title}}</h1>
+    <h3>{{title}}</h3>
+    <product-list-one></product-list-one>
+    <product-list-two></product-list-two> 
   </div>
 </template>
 
+
 <script>
+import ProductListOne from './ProductListOne.vue'
+import ProductListTwo from './ProductListTwo.vue'
+
 export default {
-  name: 'Home',
+  components: {
+     'product-list-one' : ProductListOne,
+    'product-list-two': ProductListTwo
+  },
   data () {
     return {
-      title: 'Welcome to Your Vuex project'
+      title: 'Vuex Project'
     }
   }
 }
@@ -17,18 +26,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+h3{
+  color:red;
 }
 </style>
