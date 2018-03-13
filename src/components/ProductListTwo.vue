@@ -3,7 +3,7 @@
     <h1>Product List Two</h1>
     <br><br>
     <ul>
-      <li v-for="product in products">
+      <li v-for="product in reduceStock">
         <span>{{product.name}}</span>
         <span>${{product.price}}</span>
       </li>
@@ -13,10 +13,9 @@
 
 <script>
 export default {
-  name: 'ProductListTwo',
   computed: {
-    products(){
-      return this.$store.state.products
+    reduceStock(){
+      return this.$store.getters.reduceStock;
     }
   }
 }

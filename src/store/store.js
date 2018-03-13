@@ -13,5 +13,16 @@ export const store = new Vuex.Store({
       {name:'HP',price:650},
       {name:'Sony',price:650}
     ]
-  }
+  },
+  getters: {
+      reduceStock: (state) => {
+          var reduceStock = state.products.map( product => {
+              return {
+                  name:  '**' + product.name + '**',
+                  price: product.price / 2,
+              };
+          });
+          return reduceStock;
+      }
+  },
 })
