@@ -16,7 +16,7 @@ export const store = new Vuex.Store({
     ]
   },
   getters: {
-      reduceStock: state => {
+      reduceStock: (state) => {
           var reduceStock = state.products.map( product => {
               return {
                   name:  '**' + product.name + '**',
@@ -27,17 +27,15 @@ export const store = new Vuex.Store({
       }
   },
   mutations: {
-    addPrice: state =>{
+    addPrice: (state) =>{
       state.products.forEach(product =>{
         product.price += 1;
       })
     }
   },
   actions: {
-    addPrice: context =>{
-      setTimeout (function(){
-        context.commit('addPrice');
-      },2000)
+    addPrice: (context) =>{
+      context.commit('addPrice');
     }
   }
 })

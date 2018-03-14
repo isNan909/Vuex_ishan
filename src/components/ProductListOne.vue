@@ -9,26 +9,29 @@
         <span>${{product.price}}</span>
       </li>
     </ul>
-    <button type="button" v-on:click="addPrice">Add Price</button>
+    <button type="button" v-on:click="addPrice(2)">Add Price</button>
   </div>
 </template>
 
 <script>
+
+import {mapActions} from 'vuex';
+import {mapGetters} from 'vuex';
+
 export default {
-  computed: {
-    reduceStock(){
-      return this.$store.getters.reduceStock;
+    computed: {
+        products(){
+            return this.$store.state.products;
+        },
+        ...mapGetters([
+            'reduceStock'
+        ])
+    },
+    methods: {
+        ...mapActions([
+            'addPrice'
+        ])
     }
-  },
-  methods:{
-    addPrice: function(){
-      // this.$store.state.products.forEach(product=>{
-      //   product.price += 1;
-      // })
-      // this.$store.commit('addPrice');
-      this.$store.dispatch('addPrice');
-    }
-  }
 }
 </script>
 
