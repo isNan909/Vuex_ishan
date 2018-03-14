@@ -9,6 +9,7 @@
         <span>${{product.price}}</span>
       </li>
     </ul>
+    <button type="button" v-on:click="addPrice">Add Price</button>
   </div>
 </template>
 
@@ -17,6 +18,14 @@ export default {
   computed: {
     reduceStock(){
       return this.$store.getters.reduceStock;
+    }
+  },
+  methods:{
+    addPrice: function(){
+      // this.$store.state.products.forEach(product=>{
+      //   product.price += 1;
+      // })
+      this.$store.commit('addPrice');
     }
   }
 }

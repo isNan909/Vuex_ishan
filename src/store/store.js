@@ -4,18 +4,19 @@ import Vuex from 'vuex';
 Vue.use (Vuex);
 
 export const store = new Vuex.Store({
+  strict: true,
   state: {
     products: [
-      {name:'iMac',price:650},
-      {name:'Macbook',price:650},
-      {name:'Dell',price:650},
-      {name:'Acer',price:650},
+      {name:'iMac',price:400},
+      {name:'Macbook',price:800},
+      {name:'Dell',price:300},
+      {name:'Acer',price:150},
       {name:'HP',price:650},
-      {name:'Sony',price:650}
+      {name:'Sony',price:620}
     ]
   },
   getters: {
-      reduceStock: (state) => {
+      reduceStock: state => {
           var reduceStock = state.products.map( product => {
               return {
                   name:  '**' + product.name + '**',
@@ -25,4 +26,11 @@ export const store = new Vuex.Store({
           return reduceStock;
       }
   },
+  mutations: {
+    addPrice: state =>{
+      state.products.forEach(product =>{
+        product.price += 1;
+      })
+    }
+  }
 })
