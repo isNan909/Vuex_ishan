@@ -25,7 +25,8 @@ export default {
       // this.$store.state.products.forEach(product=>{
       //   product.price += 1;
       // })
-      this.$store.commit('addPrice');
+      // this.$store.commit('addPrice');
+      this.$store.dispatch('addPrice');
     }
   }
 }
