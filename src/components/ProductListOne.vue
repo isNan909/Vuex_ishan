@@ -9,7 +9,7 @@
         <span>${{product.price}}</span>
       </li>
     </ul>
-    <button type="button" v-on:click="addPrice(2)">Add Price</button>
+    <button type="button" v-on:click="addPrice">Add Price</button>
   </div>
 </template>
 
